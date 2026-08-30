@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: tradeguard-backend
+    runtime: node
+    region: oregon
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 5000
+      - key: AWS_REGION
+        value: ap-south-1
